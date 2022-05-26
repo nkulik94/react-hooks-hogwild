@@ -2,11 +2,11 @@ import React from 'react';
 import GreaseFilter from './GreaseFilter';
 import Sort from './Sort';
 
-function FilterSort() {
+function FilterSort( { filterState, changeFilter } ) {
 
     return (
         <div style={{margin: '10px'}}>
-            <GreaseFilter />
+            <GreaseFilter filterState={filterState} changeFilter={changeFilter} />
             <Sort />
         </div>
     )

@@ -1,9 +1,9 @@
 import React from 'react';
 
-function GreaseFilter() {
+function GreaseFilter( {filterState, changeFilter} ) {
 
     return (
-        <select>
+        <select value={filterState} onChange={e => e.target.value === 'greased' ? changeFilter('greased') : changeFilter('all')}>
             <option value='all'>All hogs</option>
             <option value='greased'>Greased Hogs</option>
         </select>

@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import HogTile from './HogTile';
 
-function HogList( {hogs} ) {
+function HogList( {hogs, greaseFiltered } ) {
 
-    const [renderedHogs, updateList] = useState(hogs)
+
+    const filteredHogs = hogs.filter(hog => greaseFiltered === 'greased' ? hog.greased : true)
 
     return (
         <div className="ui grid container">
-            {renderedHogs.map(hog => {
+            {filteredHogs.map(hog => {
                 return <HogTile hog={hog} key={hog.name} />
             })}
         </div>
